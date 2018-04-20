@@ -1,0 +1,155 @@
+/* pages/gaming/gaming.wxss */
+.toolbar{
+  display: flex;  
+}
+
+button{
+  
+  font-size: 15px;
+  line-height: 50rpx;
+}
+
+.tool1{
+  position: absolute;
+  left: 0rpx;
+  
+}
+
+.tool2{
+  position: absolute;
+  left: 230rpx;
+}
+
+.game{
+  width: 200rpx;
+  height: 50rpx;
+  margin-left: 0px;
+}
+
+.tool_1{
+  margin-top: 2rpx;
+  
+}
+
+.tool_game{
+  width: 300rpx;
+  text-align: left;
+  
+}
+
+.help{
+  width: 200rpx;
+  margin-left: 0px;
+}
+
+.tool_help{
+  width: 300rpx
+}
+
+.state{
+  display: flex;
+  position: absolute; 
+  top: 100rpx;
+  z-index: -1;  /* Z-index 仅能在定位元素上奏效 */
+}
+
+image{
+  width: 50rpx;
+  height: 50rpx;
+  
+}
+
+.mine{
+  display: flex;
+
+}
+
+.mine_ima{
+}
+
+.mine_left{
+  border: 1px solid black;
+  border-radius: 2px ;
+  width: 100rpx;
+  color: red;
+  text-align: right;
+}
+
+.expression{
+  margin-left: 180rpx;
+  margin-right: 180rpx;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 5px ;
+  border: 3px double #aaa;
+}
+
+.time{
+  display: flex;
+}
+
+.time_ima{
+}
+
+.time_consuming{
+  border: 1px solid black;
+  border-radius: 2px ;
+  margin-right: 0rpx;
+  width: 100rpx;
+  color: red;
+  text-align: right;
+}
+
+
+.scroll{
+  position: absolute;
+  top: 170rpx;
+  z-index: -1;
+}
+
+.flex-container {
+    padding: 0;
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    line-height:1em;
+    width: 90%;
+    border: 1px solid red;
+}
+
+.flex-item {
+    background: #E6E9ED;
+    margin: 1px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    flex: 1 0 auto;
+    height: 50rpx;
+    width: 50rpx;
+    font-family: "Lucida Console", Monaco, monospace
+}
+
+
+
+
+
+
+
+
+
+
+.footer {
+  position: absolute;
+  margin-top: 1050rpx;
+  margin-left: 80%;
+}
+
+.tips {
+  position: fixed;
+  margin: 1100rpx auto auto 10%;
+  font-size: 62.5%;
+  color: #8d8d8d;
+}

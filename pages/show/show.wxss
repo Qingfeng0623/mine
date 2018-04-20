@@ -1,0 +1,63 @@
+/* pages/show/show.wxss */
+text{
+  font-size: 14px;
+}
+
+image{
+  width: 300rpx;
+  height: 300rpx;
+}
+
+.butClass{
+  width:100rpx;
+  font-size: 30rpx;
+  padding: 0;
+  margin-top: 0;
+}
+
+.style_choice{
+  display: flex;
+  flex-direction: row;
+  margin-left: 20rpx;
+}
+
+.board_choice{
+  display: flex;
+  flex-direction: row;
+  margin-left: 20rpx;
+}
+
+.flower{
+  margin-left: 30rpx;
+}
+
+.green{
+  margin-left: 30rpx;
+}
+
+
+.button{
+  display: flex;
+  flex-direction: row;
+  line-height:100%;
+  position: fixed;
+  bottom: 100rpx;
+  right: 50rpx;
+}
+
+.confirm{
+  margin-right: 5rpx;
+  width:200rpx;
+  height: 20px;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.cancel{
+  margin-left: 5rpx;
+  width:200rpx;
+  height: 20px;
+  font-size: 12px;
+  line-height: 20px;
+  
+}

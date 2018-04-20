@@ -1,0 +1,37 @@
+<!--pages/show/show.wxml-->
+<view class='page'>
+  <view class='style'>
+    <text>选择游戏样式</text>
+    <view class='style_choice'>
+      <view class='mine' bindtap='style_mine' >
+        <image class='mine_ima' style='border:2px solid {{choose_mine}}' src='../../images/mine.jpg'></image>
+        <button class='mine_but butClass' style='background-color:{{mine_bg_color}};color:{{mine_color}}'>扫雷</button>
+      </view>
+
+      <view class='flower' bindtap='style_flower' >
+        <image class='flower_ima' style='border:2px solid {{choose_flower}}' src='../../images/flower.png'></image>
+        <button class='flower_but butClass' style='background-color:{{flower_bg_color}};color:{{flower_color}}'>花园</button>
+      </view>
+    </view>
+  </view>
+
+  <view class='board'>
+    <text>选择棋盘</text>
+    <view class='board_choice'>
+      <view class='blue' bindtap='board_blue'>
+        <image class='blue_ima'  style='border:2px solid {{choose_blue}}' src='../../images/blue.png'></image>
+        <button class='blue_but butClass' style='background-color:{{blue_bg_color}};color:{{blue_color}}'>蓝色</button>
+      </view>
+
+      <view class='green' bindtap='board_green' >
+        <image class='green_ima' style='border:2px solid {{choose_green}}' src='../../images/green.png'></image>
+        <button class='green_but butClass' style='background-color:{{green_bg_color}};color:{{green_color}}'>绿色</button>
+      </view>
+    </view>
+  </view>
+
+  <view class='button'>
+    <button class='confirm' plain='true'  bindtap='confirm'>确认</button>
+    <button class='cancel' plain='true' bindtap='back_page'>取消</button>
+  </view>
+</view>

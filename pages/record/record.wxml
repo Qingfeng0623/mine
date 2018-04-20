@@ -1,0 +1,32 @@
+<!--pages/record/record.wxml-->
+<view class='table'>
+  <view class='first'><text class='grade'>等级</text><text class='consuming'>用时</text><text class='time'>时间</text></view>
+  <view class='low'>
+    <text class='primary'>初级</text>
+    <text class='lowConsuming'>{{lowConsuming}}</text>
+    <view class='lowTime'>
+      <text class='lowTime_1'>{{lowTime_1}}</text>
+      <text class='lowTime_2'>{{lowTime_2}}</text>
+    </view>
+  </view>
+
+  <view class='mid'>
+    <text class='medium'>中级</text>
+    <text class='midConsuming'>{{midConsuming}}</text>
+    <view class='midTime'>
+      <text class='midTime_1'>{{midTime_1}}</text>
+      <text class='midTime_2'>{{midTime_2}}</text>
+    </view>
+  </view>
+
+  <view class='high'>
+    <text class='senior'>高级</text>
+    <text class='highConsuming'>{{highConsuming}}</text>
+    <view class='highTime'>
+      <text class='highTime_1'>{{highTime_1}}</text>
+      <text class='highTime_2'>{{highTime_2}}</text></view>
+    </view>
+
+  <button plain='true' type='primary' size='mini' bindtap='reset'>重置</button>
+</view>
+

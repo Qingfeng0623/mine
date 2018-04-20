@@ -1,0 +1,27 @@
+<!--pages/difficulty-choice/difficulty-choice.wxml-->
+<radio-group class="radio-group" bindchange="radioChange">
+  <label class="radio" wx:for="{{items}}">
+    <radio value="{{item.name}}" checked="{{item.checked}}">
+      <view>{{item.value}}</view>
+      <view>{{item.mines}}个雷</view>
+      <view>{{item.area}}平铺方格</view>
+    </radio>
+  </label>
+  <label>
+    <radio value='other'>
+      <view>自定义</view>
+    </radio>
+      <view class='column' style='color:{{input_color}}'>
+        <view class='row'><text>高度(9-24):</text><input type='number' value='{{height_defined}}' bindblur='height_check' focus='{{height_focus}}'></input></view>
+        <view class='row'><text>宽度(9-30):</text><input type='number' value='{{width_defined}}' bindblur='width_check' focus='{{width_focus}}'></input></view>
+        <view class='row'><text>雷数(10-668):</text><input type='number' value='{{mines_defined}}' bindblur='mines_check' focus='{{mines_focus}}'></input></view>
+      </view>
+    
+  </label>
+</radio-group>
+
+<view class='button'>
+  <button class='confirm' plain='true' type='primary' size='mini' bindtap='confirm'>确认</button>
+  <button class='cancel' plain='true' type='primary' size='mini' bindtap='back_page'>取消</button>
+</view>
+

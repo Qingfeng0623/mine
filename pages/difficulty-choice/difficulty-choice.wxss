@@ -1,0 +1,39 @@
+/* pages/difficulty-choice/difficulty-choice.wxss */
+.radio-group{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rpx;
+}
+
+.radio{
+  margin-bottom: 30rpx;
+}
+
+.column{
+  margin-left: 60rpx;
+  margin-top: 20rpx;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30rpx;
+  position: left;
+}
+ 
+ input{
+  border: 1px solid;
+  width: 200rpx;
+  position: right;
+  margin:0 150rpx 0 auto;
+}  
+
+.button{
+  position: fixed;
+  bottom: 100rpx;
+  right: 50rpx;   
+}
+
+.confirm{
+  margin-right: 50rpx;
+}

@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/gaming/gaming",
+    "pages/firstPage/firstPage",
+    "pages/difficulty-choice/difficulty-choice",
+    "pages/record/record",
+    "pages/show/show",
+    
+    "pages/index/index",
+    "pages/logs/logs"
+    
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Mine-Sweeping",
+    "navigationBarTextStyle": "black"
+  }
+}
