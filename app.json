@@ -1,11 +1,11 @@
 {
   "pages": [
-    "pages/gaming/gaming",
+    
     "pages/firstPage/firstPage",
     "pages/difficulty-choice/difficulty-choice",
     "pages/record/record",
     "pages/show/show",
-    
+    "pages/gaming/gaming",
     "pages/index/index",
     "pages/logs/logs"
     

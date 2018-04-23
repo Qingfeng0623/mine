@@ -1,5 +1,5 @@
 <!--pages/record/record.wxml-->
-<view class='table'>
+<!-- <view class='table'>
   <view class='first'><text class='grade'>等级</text><text class='consuming'>用时</text><text class='time'>时间</text></view>
   <view class='low'>
     <text class='primary'>初级</text>
@@ -28,5 +28,36 @@
     </view>
 
   <button plain='true' type='primary' size='mini' bindtap='reset'>重置</button>
-</view>
+</view> -->
 
+
+<view class='page'>
+  <view class='grade'>
+    <text>当前选择：</text>
+    <picker range='{{grade}}' value='{{index}}' bindchange='bindPickerChange' class='picker'>
+      <view>{{grade[index]}}</view>
+    </picker>
+  </view>
+
+  <view class='best'>
+    <text>最佳时间</text>
+    <view class='record'>
+      <text class='time_consuming'>用时：{{best_time}}</text>
+      <text class='date'>日期：{{best_date}}</text>
+    </view>
+  </view>
+
+  <view class='detail'>
+    <text style='margin-bottom:3%'>已玩游戏：{{played}}</text>
+    <text style='margin-bottom:3%'>已胜游戏：{{winned}}</text>
+    <text style='margin-bottom:3%'>获胜率：{{winned_rate}}%</text>
+    <text style='margin-bottom:3%'>最多连胜：{{winned_continue}}</text>
+    <text style='margin-bottom:3%'>最多连败：{{loss_continue}}</text>
+    <text style='margin-bottom:3%'>当前连局：{{current_continue}}</text>
+  </view>
+
+  <view class='buttons'>
+    <button plain='true' type='primary' size='mini' bindtap='close' style='margin-right:10%'>关闭</button>
+    <button plain='true' type='primary' size='mini' bindtap='reset'>重置</button>
+  </view>
+</view>

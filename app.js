@@ -35,8 +35,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    lowConsuming:9999, //初级用时最短
-    midConsuming:9999, //中级用时最短
-    highConsuming:9999 //高级用时最短
+    game_style:'扫雷',
+    board_style:'蓝色',
   }
 })

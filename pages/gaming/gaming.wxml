@@ -12,7 +12,7 @@
       
     </view>
     
-    <view class='tool2'>
+    <view class='tool2' >
       <button class='help' bindtap='show_help' style='color:{{help_color}}'>帮助</button>
       <button class='tool_help' style='display:{{help_show}}' bindtap='viewHelp'>查看帮助</button>
       <button class='tool_help' style='display:{{help_show}}' bindtap='aboutMine'>关于扫雷</button>
@@ -20,7 +20,7 @@
   </view>
 
   <view class='state'>                 <!-- 状态栏 -->
-    <view class='mine'>
+    <view class='mines'>
       <image src='../../images/mine_icon.png' class='mine_ima'></image>
       <view class='mine_left'><text >{{mines_left}}</text></view>
     </view>
@@ -33,12 +33,12 @@
   </view>   
 
   <!-- 扫雷区 -->
-  <scroll-view scroll-x scroll-y style='height:70%;border:1px solid black' class='scroll' scroll-top='100' scroll-left='100'>             
-      <!-- <view wx:for="{{mine_map}}" wx:for-item="row" wx:for-index="i" class="flex-container">
-          <button wx:for="{{row}}" wx:for-item="col" wx:for-index="j" class="flex-item {{col < ({{col_count}}+1) ? (col < 0 ? '':'open') : ((col > ({{col_count}}+1)) ? 'flag' : 'mine')}}" bindtap="demining" data-x="{{i}}" data-y="{{j}}" data-value="{{col}}">
-            {{col < ({{col_count}}+1) ? (col < 0 ? '':col) : ((col > ({{col_count}}+1)) ? 'F' : 'M')}} 
+  <scroll-view scroll-x scroll-y style='height:70%' class='scroll' scroll-top='10' scroll-left='10'>            
+       <view wx:for="{{mine_map}}" wx:for-item="row" wx:for-index="i" class="flex-container" >
+          <button  wx:for="{{row}}" wx:for-item="col" wx:for-index="j" class="flex-item {{col < 9 ? (col < 0 ? '':'open') : (col > 9 ? 'flag' : 'mine')}}"  bindtap="demining" data-x="{{i}}" data-y="{{j}}" data-value="{{col}}" >
+            {{col < 9 ? (col < 0 ? '':col) : (col > 9 ? 'F' : 'M')}} 
         </button>  
-    </view>   -->
+    </view>   
   </scroll-view>  
 
   <view class="footer">

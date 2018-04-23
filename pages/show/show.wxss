@@ -48,16 +48,16 @@ image{
 .confirm{
   margin-right: 5rpx;
   width:200rpx;
-  height: 20px;
-  font-size: 12px;
-  line-height: 20px;
+  height: 30px;
+  font-size: 15px;
+  line-height: 30px;
 }
 
 .cancel{
   margin-left: 5rpx;
   width:200rpx;
-  height: 20px;
-  font-size: 12px;
-  line-height: 20px;
+  height: 30px;
+  font-size: 15px;
+  line-height: 30px;
   
 }

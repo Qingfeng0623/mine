@@ -16,17 +16,18 @@ Page({
     time_consuming:0,     //耗时
 
     mine_map:{},
-    row_count:9,
-    col_count:9,
+    row_count:0,
+    col_count:0,
+
   },
 
   mineMap: {},
   mineMapMapping: {},
-  rowCount: 9,
-  colCount: 9,
-  minesCount: 10,
-  minMinesCount: 10,
-  maxMinesCount: 20,
+  rowCount: 0,
+  colCount: 0,
+  minesCount: 0,
+  // minMinesCount: 10,
+  // maxMinesCount: 200,
   minesLeft: 0,
   timeGo: 0,
   timeInterval: null,
@@ -37,13 +38,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.rowCount = options.rowCount;
+    this.colCount = options.colCount;
+    this.minesCount = options.minesCount;
+    console.log(this.rowCount),
+    console.log(this.colCount),
+    console.log(this.minesCount),
     this.setData({
-      mines_left: 0,
-      time_consuming: 0
+      time_consuming: 0,
+      row_count:this.rowCount,
+      col_count:this.colCount,
+      mines_left:this.minesCount,
     });
     this.drawMineField();//加载画面时绘制游戏区
     this.createMinesMap();//随机生成雷，并计算周围雷数
-    this.setMinesLeft();//设置剩余雷数
+    // this.setMinesLeft();//设置剩余雷数
     this.timeGoReset();//停止并清除计时
     this.timeGoClock();//计时
     this.endOfTheGame = false;//游戏结束标志
@@ -86,7 +95,7 @@ Page({
     //console.log(tmpMineMap);
 
     // laying mines with 9
-    this.minesCount = this.rangeRandom(this.minMinesCount, this.maxMinesCount);//从最小雷数到最大雷数随机生成雷数
+    // this.minesCount = this.rangeRandom(this.minMinesCount, this.maxMinesCount);//从最小雷数到最大雷数随机生成雷数
 
     var tmpCount = this.minesCount;
     //console.log("Mine count: ", tmpCount);
@@ -125,12 +134,12 @@ Page({
     this.mineMapMapping = tmpMineMap;
   },
 
-  setMinesLeft: function () {//设置剩余雷数
-    this.minesLeft = this.minesCount;
-    this.setData({ 
-      mines_left: this.minesLeft 
-    });
-  },
+  // setMinesLeft: function () {//设置剩余雷数
+  //   this.minesLeft = this.minesCount;
+  //   this.setData({ 
+  //     mines_left: this.minesLeft 
+  //   });
+  // },
 
   timeGoClock: function () {//计时
     var self = this;
@@ -379,7 +388,27 @@ Page({
 
   newGame:function(e){
     console.log('newGame');
+    // wx.showActionSheet({
+    //   itemList: ['A', 'B', 'C'],
+    //   success: function (res) {
+    //     console.log(res.tapIndex)
+    //   },
+    //   fail: function (res) {
+    //     console.log(res.errMsg)
+    //   }
+    // })
     
+    wx.showModal({
+      title: '提示',
+      content: '这是一个模态弹窗',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
   },
 
   record: function (e) {

@@ -1,4 +1,6 @@
 // pages/show/show.js
+const app = getApp();
+
 Page({
 
   /**
@@ -20,22 +22,47 @@ Page({
     green_color: '#000000',           /*绿色 按钮字体颜色*/
   },
 
-  style_choose:'扫雷',
-  board_choose:'蓝色',
+  style_choose:null,
+  board_choose:null,
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      choose_mine: '#0066FF',
-      mine_bg_color: '#0066FF',
-      mine_color: '#FFFFFF',
-
-      choose_blue: '#0066FF',
-      blue_bg_color: '#0066FF',
-      blue_color: '#FFFFFF',
-    })
+    this.style_choose = app.globalData.game_style;
+    this.board_choose = app.globalData.board_style;
+    if (app.globalData.game_style != '扫雷')
+    {
+      this.setData({
+        choose_flower: '#0066FF',
+        flower_bg_color: '#0066FF',
+        flower_color: '#FFFFFF',
+      })
+    }
+    else
+    {
+      this.setData({
+        choose_mine: '#0066FF',
+        mine_bg_color: '#0066FF',
+        mine_color: '#FFFFFF',
+      })
+    }
+    if (app.globalData.board_style != '蓝色')
+    {
+      this.setData({
+        choose_green: '#0066FF',
+        green_bg_color: '#0066FF',
+        green_color: '#FFFFFF',
+      })
+    }
+    else
+    {
+      this.setData({
+        choose_blue: '#0066FF',
+        blue_bg_color: '#0066FF',
+        blue_color: '#FFFFFF',
+      })
+    }
   },
 
   style_mine:function(e){       /*游戏样式选择扫雷 */
@@ -91,8 +118,10 @@ Page({
   },
 
   confirm:function(e){
-    console.log(this.style_choose);
-    console.log(this.board_choose);
+    app.globalData.game_style = this.style_choose;
+    app.globalData.board_style = this.board_choose;
+    console.log(app.globalData.game_style);
+    console.log(app.globalData.board_style);
   },
 
   back_page:function(e){
