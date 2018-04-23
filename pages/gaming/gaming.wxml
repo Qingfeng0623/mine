@@ -1,4 +1,5 @@
 <!--pages/gaming/gaming.wxml-->
+<wxs src="./gaming.wxs" module="gaming" />
 <view class='page' >
   <view class='toolbar'>  <!-- 菜单栏 -->
     <view class='tool1'>
@@ -27,18 +28,20 @@
      <image src='{{expression_src}}' class='expression'></image> 
     <!-- <button  class='expression'></button> -->
     <view class='time'>
-      <image src='../../images/block.png' class='time_ima'></image>
+      <image src='../../images/clock.png' class='time_ima'></image>
       <view class='time_consuming'><text>{{time_consuming}}</text></view>
     </view>
   </view>   
 
   <!-- 扫雷区 -->
-  <scroll-view scroll-x scroll-y style='height:70%' class='scroll' scroll-top='10' scroll-left='10'>            
-       <view wx:for="{{mine_map}}" wx:for-item="row" wx:for-index="i" class="flex-container" >
-          <button  wx:for="{{row}}" wx:for-item="col" wx:for-index="j" class="flex-item {{col < 9 ? (col < 0 ? '':'open') : (col > 9 ? 'flag' : 'mine')}}"  bindtap="demining" data-x="{{i}}" data-y="{{j}}" data-value="{{col}}" >
-            {{col < 9 ? (col < 0 ? '':col) : (col > 9 ? 'F' : 'M')}} 
+  <scroll-view scroll-x scroll-y style='height:70%' class='scroll' scroll-top='10' scroll-left='10'>
+  <block class='block'>            
+    <view wx:for="{{mine_map}}" wx:for-item="row" wx:for-index="i" class="flex-container" >
+        <button wx:for="{{row}}" wx:for-item="col" wx:for-index="j" class="flex-item {{gaming.board_class(board_style)}} {{col < 9 ? (col < 0 ? '':'open') : (col > 9 ? 'flag' : 'mine')}}"  bindtap="demining" data-x="{{i}}" data-y="{{j}}" data-value="{{col}}"  style="color:{{(col < 5 ? (col < 3 ? (col < 2 ? (col < 1 ? ('black') : ('rgb(65, 85, 184)')) : ('rgb(32, 111, 6)')) : (col < 4 ? ('rgb(186, 1, 19)') : ('rgb(0, 3, 129)'))) : (col < 7 ? (col < 6 ? ('rgb(123, 4, 0)') : ('rgb(0, 129, 129)')) : (col < 8 ? ('rgb(166, 8, 7)') : ('rgb(190 190 190)'))))}}">
+            {{col < 9 ? (col < 0 ? '':(col < 1 ? '':col)) : (col > 9 ? 'F' : 'M')}} 
         </button>  
     </view>   
+  </block>
   </scroll-view>  
 
   <view class="footer">

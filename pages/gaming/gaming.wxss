@@ -121,18 +121,24 @@ image{
 }
 
 .flex-item {
-    background: rgb(121, 177, 236);
-    color: rgb(72, 84, 194);
     font-weight: bold;
     font-size: 14px;
     text-align: center;
     width: 50rpx;
     height: 50rpx;
     font-family: "Lucida Console", Monaco, monospace;
-     border: 1px solid black; 
+    border: 1px solid black; 
     border-radius: 0;
     /* display: inline-block; */
     margin: 0;
+}
+
+.board_blue{
+  background: rgb(121, 177, 236)
+}
+
+.board_green{
+  background: rgb(91, 175, 98)
 }
 
 .open { 
@@ -154,7 +160,9 @@ image{
     padding-top:100%;
 } 
 
-
+block{
+  
+}
 
 
 

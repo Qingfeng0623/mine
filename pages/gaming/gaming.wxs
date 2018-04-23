@@ -1,0 +1,7 @@
+var board_class =  function(board_style){
+  return (board_style ==='蓝色' ? 'board_blue' : 'board_green');
+}
+
+module.exports = {
+  board_class:board_class
+}

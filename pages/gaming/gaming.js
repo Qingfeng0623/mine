@@ -1,6 +1,6 @@
 // pages/gaming/gaming.js
 // 菜单高亮
-
+var app = getApp();
 Page({
 
   /**
@@ -18,9 +18,10 @@ Page({
     mine_map:{},
     row_count:0,
     col_count:0,
-
+    // background_color: 'rgb(121, 177, 236)',   //初始化为蓝色
+    board_style:'蓝色',
   },
-
+  // current_number: 0,
   mineMap: {},
   mineMapMapping: {},
   rowCount: 0,
@@ -44,6 +45,7 @@ Page({
     console.log(this.rowCount),
     console.log(this.colCount),
     console.log(this.minesCount),
+    console.log(app.globalData.board_style),
     this.setData({
       time_consuming: 0,
       row_count:this.rowCount,
@@ -52,7 +54,6 @@ Page({
     });
     this.drawMineField();//加载画面时绘制游戏区
     this.createMinesMap();//随机生成雷，并计算周围雷数
-    // this.setMinesLeft();//设置剩余雷数
     this.timeGoReset();//停止并清除计时
     this.timeGoClock();//计时
     this.endOfTheGame = false;//游戏结束标志
@@ -92,13 +93,8 @@ Page({
         tmpMineMap[row][col] = 0;
       }
     }
-    //console.log(tmpMineMap);
-
-    // laying mines with 9
-    // this.minesCount = this.rangeRandom(this.minMinesCount, this.maxMinesCount);//从最小雷数到最大雷数随机生成雷数
-
     var tmpCount = this.minesCount;
-    //console.log("Mine count: ", tmpCount);
+
     while (tmpCount > 0) {  //随机生成位置作为雷
 
       var row = this.rangeRandom(0, this.rowCount - 1);
@@ -134,12 +130,6 @@ Page({
     this.mineMapMapping = tmpMineMap;
   },
 
-  // setMinesLeft: function () {//设置剩余雷数
-  //   this.minesLeft = this.minesCount;
-  //   this.setData({ 
-  //     mines_left: this.minesLeft 
-  //   });
-  // },
 
   timeGoClock: function () {//计时
     var self = this;
@@ -388,19 +378,88 @@ Page({
 
   newGame:function(e){
     console.log('newGame');
-    // wx.showActionSheet({
-    //   itemList: ['A', 'B', 'C'],
-    //   success: function (res) {
-    //     console.log(res.tapIndex)
-    //   },
-    //   fail: function (res) {
-    //     console.log(res.errMsg)
-    //   }
-    // })
-    
+    this.setData({
+      game_show: 'none',
+      game_color: 'black',
+    });
+    var that = this;
+    wx.showActionSheet({
+      itemList: ['退出并开始新游戏', '重新开始这个游戏'],
+      success: function (res) {
+        console.log(res.tapIndex);
+        if (res.tapIndex == 0) //退出并开始新游戏,游戏的规模相同，但数据不同。没有销毁当前页面，只是重新绘制
+        {
+          that.drawMineField();//加载画面时绘制游戏区
+          that.createMinesMap();//随机生成雷，并计算周围雷数
+          that.timeGoReset();//停止并清除计时
+          that.timeGoClock();//计时
+          that.endOfTheGame = false;//游戏结束标志
+          that.safeMinesGo = 0;
+        }
+        else  //相同数据、相同规模
+        {
+          that.drawMineField();//加载画面时绘制游戏区
+          // that.createMinesMap();//随机生成雷，并计算周围雷数
+          that.timeGoReset();//停止并清除计时
+          that.timeGoClock();//计时
+          that.endOfTheGame = false;//游戏结束标志
+          that.safeMinesGo = 0;
+        }
+      },
+      fail: function (res) {
+        console.log(res.errMsg)
+      }
+    })
+  },
+
+  record: function (e) {      //统计信息
+    console.log('record');
+    this.setData({
+      game_show: 'none',
+      game_color: 'black',
+    });
+    wx.navigateTo({
+      url: '../record/record',
+    })
+  },
+
+  option: function (e) {    //选项
+    console.log('option');
+    this.setData({
+      game_show: 'none',
+      game_color: 'black',
+    });
+    wx.redirectTo({
+      url: '../difficulty-choice/difficulty-choice',
+    })
+  },
+
+  alterShow: function (e) {
+    console.log('alterShow');
+    this.setData({
+      game_show: 'none',
+      game_color: 'black',
+    });
+    wx.navigateTo({
+      url: '../show/show',
+    })
+  },
+
+  viewHelp: function (e) {
+    console.log('viewHelp');
+
+  },
+
+  aboutMine: function (e) {
+    console.log('aboutMine');
+    this.setData({
+      help_show: 'none',
+      help_color: 'black',
+    })
     wx.showModal({
-      title: '提示',
-      content: '这是一个模态弹窗',
+      title: '关于',
+      content: 'The developer is ye qingfeng.',
+      showCancel:false,
       success: function (res) {
         if (res.confirm) {
           console.log('用户点击确定')
@@ -411,36 +470,13 @@ Page({
     })
   },
 
-  record: function (e) {
-    console.log('record');
-
-  },
-
-  option: function (e) {
-    console.log('option');
-
-  },
-
-  alterShow: function (e) {
-    console.log('alterShow');
-
-  },
-
-  viewHelp: function (e) {
-    console.log('viewHelp');
-
-  },
-
-  aboutMine: function (e) {
-    console.log('aboutMine');
-
-  },
-
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.setData({
+      board_style: (app.globalData.board_style == '蓝色' ? '蓝色' : '绿色'),
+    })
   },
 
   /**

@@ -59,7 +59,7 @@ Page({
       return;
     }
     else{
-      wx.navigateTo({
+      wx.redirectTo({
         url: '../gaming/gaming?rowCount=' + this.height + '&colCount=' + this.width + '&minesCount=' + this.mines,
       })
     }
