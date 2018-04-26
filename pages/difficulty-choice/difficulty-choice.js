@@ -22,6 +22,7 @@ Page({
   width:9,
   mines:10,
   tip:false,  //防止用户点击确认后不知道系统修改了数据，值为true时，表示当前修改了数据
+  difficulty:'初级',
   /**
    * 生命周期函数--监听页面加载
    */
@@ -59,8 +60,17 @@ Page({
       return;
     }
     else{
+      var pages = getCurrentPages();
+      if(pages.length > 2)
+      {
+        var prepage = pages[pages.length - 2];
+        console.log(prepage.data);
+        prepage.destroy();
+      }
+      
+      // console.log(pages.length);
       wx.redirectTo({
-        url: '../gaming/gaming?rowCount=' + this.height + '&colCount=' + this.width + '&minesCount=' + this.mines,
+        url: '../gaming/gaming?rowCount=' + this.height + '&colCount=' + this.width + '&minesCount=' + this.mines + '&difficulty=' + this.difficulty,
       })
     }
     
@@ -78,6 +88,7 @@ Page({
       this.setData({
         input_color:'#000000',
       })
+      this.difficulty = '自定义';
     }
     else{
       this.setData({
@@ -93,18 +104,21 @@ Page({
         this.height = 9;
         this.width = 9;
         this.mines = 10;
+        this.difficulty = '初级';
         break;
       }
       case 'mid':{
         this.height = 16;
         this.width = 16;
         this.mines = 40;
+        this.difficulty = '中级';
         break;
       }
       case 'high':{
         this.height = 30;
         this.width = 16;
         this.mines = 99;
+        this.difficulty = '高级';
         break;
       }
     }

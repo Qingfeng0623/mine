@@ -1,4 +1,5 @@
 // pages/firstPage/firstPage.js
+const util = require('../../utils/util.js')
 Page({
 
   /**
@@ -13,7 +14,7 @@ Page({
    */
   onLoad: function (options) {
     
-    
+    console.log(util.formatTime(new Date()));
 
   },
 

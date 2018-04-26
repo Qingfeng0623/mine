@@ -142,11 +142,11 @@ image{
 }
 
 .open { 
-    background: rgb(179, 186, 215);
+  background: rgb(179, 186, 215);
 }
 
 .mine { 
-    background: #E9573F;
+  background: #E9573F;  
 }
 
 .flag {
@@ -160,20 +160,9 @@ image{
     padding-top:100%;
 } 
 
-block{
-  
-}
-
-
-
-
-
-
-
-
 .footer {
   position: absolute;
-  margin-top: 1050rpx;
+  margin-top: 1100rpx;
   margin-left: 80%;
 }
 
