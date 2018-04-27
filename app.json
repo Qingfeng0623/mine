@@ -6,9 +6,10 @@
     "pages/record/record",
     "pages/show/show",
     "pages/gaming/gaming",
+    "pages/gaming2/gaming2",
+    "pages/help/help",
     "pages/index/index",
     "pages/logs/logs"
-    
     
   ],
   "window": {

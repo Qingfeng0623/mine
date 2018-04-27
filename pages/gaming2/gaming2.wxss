@@ -121,16 +121,14 @@ image{
 }
 
 .flex-item {
-    font-weight: bold;
-    font-size: 14px;
-    text-align: center;
     width: 50rpx;
     height: 50rpx;
-    font-family: "Lucida Console", Monaco, monospace;
     border: 1px solid black; 
     border-radius: 0;
-    /* display: inline-block; */
-    margin: 0;
+    display: inline-block; 
+    margin-left: -1rpx;
+    margin-top: -1rpx;
+    
 }
 
 .board_blue{
@@ -142,8 +140,7 @@ image{
 }
 
 .open { 
-  background-color: #CCC;
-  /* background: rgb(179, 186, 215); */
+  background: rgb(179, 186, 215);
 }
 
 .mine { 
@@ -154,7 +151,7 @@ image{
     background: #F6BB42;
 }
 
-.flex-item:before {
+ .flex-item:before {
     content: '';
     display: block;
     float: left;
@@ -172,4 +169,74 @@ image{
   margin: 1100rpx auto auto 10%;
   font-size: 62.5%;
   color: #8d8d8d;
+}
+
+.zhengmian{
+  width:49rpx;
+  height: 49rpx;
+  /* z-index: 40; */
+  position: absolute; 
+  border: 1px #CCCCCC outset;
+  margin: auto;
+  opacity: 1;
+
+}
+
+.chaqi{
+  width:49rpx;
+  height: 49rpx;
+  /* z-index: 30; */
+  position: absolute;
+  border: 1px #CCCCCC outset;
+  opacity: 1;
+
+}
+
+.lei{
+  width:50rpx;
+  height: 50rpx;
+  /* z-index: 10; */
+  position: absolute;
+  /* opacity: 0; */
+
+}
+
+.shuzi{
+  width:50rpx;
+  height: 50rpx;
+  /* z-index: 20; */
+  position: absolute;
+  background-color: #FFF; 
+  border:#CCC 1px solid;
+  line-height: 50rpx;
+  text-align: center;
+  font-weight: bold;
+  font-size: 45rpx;
+  /* opacity: 0; */
+
+}
+
+.num_1{
+  color: rgb(65, 85, 184)
+}
+.num_2{
+  color: rgb(32, 111, 6)
+}
+.num_3{
+  color: rgb(186, 1, 19)
+}
+.num_4{
+  color: rgb(0, 3, 129)
+}
+.num_5{
+  color: rgb(123, 4, 0)
+}
+.num_6{
+  color: rgb(0, 129, 129)
+}
+.num_7{
+  color: rgb(166, 8, 7)
+}
+.num_8{
+  color: rgb(0, 0, 0)
 }

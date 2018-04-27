@@ -2,74 +2,56 @@
 App({
   onLaunch: function () {
     try{
-      this.globalData.low.use_time = wx.getStorageSync('low_use_time') || [];
+      this.globalData.low.use_time = wx.getStorageSync('low_use_time') ;
       // console.log(this.globalData.low.use_time);
       // console.log(typeof(this.globalData.low.use_time));
-      this.globalData.low.date = wx.getStorageSync('low_date') || [];
-      this.globalData.low.play = wx.getStorageSync('low_play') || [];
-      this.globalData.low.win = wx.getStorageSync('low_win') || [];
-      this.globalData.low.rate = wx.getStorageSync('low_rate') || [];
-      this.globalData.low.con_win = wx.getStorageSync('low_con_win') || [];
-      this.globalData.low.con_loss = wx.getStorageSync('low_con_loss') || [];
-      this.globalData.low.curr = wx.getStorageSync('low_curr') || [];
+      this.globalData.low.date = wx.getStorageSync('low_date') ;
+      this.globalData.low.play = wx.getStorageSync('low_play') ;
+      this.globalData.low.win = wx.getStorageSync('low_win');
+      this.globalData.low.rate = wx.getStorageSync('low_rate');
+      this.globalData.low.con_win = wx.getStorageSync('low_con_win') ;
+      this.globalData.low.con_loss = wx.getStorageSync('low_con_loss') ;
+      this.globalData.low.curr = wx.getStorageSync('low_curr');
       console.log('low' ,this.globalData.low);
     }catch(e){
       console.log(e)
     }
     
     try {
-      this.globalData.mid.use_time = wx.getStorageSync('mid_use_time') || [];
-      this.globalData.mid.date = wx.getStorageSync('mid_date') || [];
-      this.globalData.mid.play = wx.getStorageSync('mid_play') || [];
-      this.globalData.mid.win = wx.getStorageSync('mid_win') || [];
-      this.globalData.mid.rate = wx.getStorageSync('mid_rate') || [];
-      this.globalData.mid.con_win = wx.getStorageSync('mid_con_win') || [];
-      this.globalData.mid.con_loss = wx.getStorageSync('mid_con_loss') || [];
-      this.globalData.mid.curr = wx.getStorageSync('mid_curr') || [];
+      this.globalData.mid.use_time = wx.getStorageSync('mid_use_time');
+      this.globalData.mid.date = wx.getStorageSync('mid_date') ;
+      this.globalData.mid.play = wx.getStorageSync('mid_play');
+      this.globalData.mid.win = wx.getStorageSync('mid_win');
+      this.globalData.mid.rate = wx.getStorageSync('mid_rate') ;
+      this.globalData.mid.con_win = wx.getStorageSync('mid_con_win');
+      this.globalData.mid.con_loss = wx.getStorageSync('mid_con_loss') ;
+      this.globalData.mid.curr = wx.getStorageSync('mid_curr');
       console.log('mid',this.globalData.mid)
     } catch (e) {
       console.log(e)
     }
 
     try {
-      this.globalData.high.use_time = wx.getStorageSync('high_use_time') || [];
-      this.globalData.high.date = wx.getStorageSync('high_date') || [];
-      this.globalData.high.play = wx.getStorageSync('high_play') || [];
-      this.globalData.high.win = wx.getStorageSync('high_win') || [];
-      this.globalData.high.rate = wx.getStorageSync('high_rate') || [];
-      this.globalData.high.con_win = wx.getStorageSync('high_con_win') || [];
-      this.globalData.high.con_loss = wx.getStorageSync('high_con_loss') || [];
-      this.globalData.high.curr = wx.getStorageSync('high_curr') || [];
+      this.globalData.high.use_time = wx.getStorageSync('high_use_time');
+      this.globalData.high.date = wx.getStorageSync('high_date');
+      this.globalData.high.play = wx.getStorageSync('high_play') ;
+      this.globalData.high.win = wx.getStorageSync('high_win') ;
+      this.globalData.high.rate = wx.getStorageSync('high_rate') ;
+      this.globalData.high.con_win = wx.getStorageSync('high_con_win') ;
+      this.globalData.high.con_loss = wx.getStorageSync('high_con_loss') ;
+      this.globalData.high.curr = wx.getStorageSync('high_curr') ;
       console.log('high',this.globalData.high)
     } catch (e) {
       console.log(e)
     }
+
+    try{
+      this.globalData.game_style = wx.getStorageSync('game_style') || '扫雷';
+      this.globalData.board_style = wx.getStorageSync('board_style') || '蓝色';
+    }catch(e){
+      console.log(e)
+    }
     
-    // this.globalData.low.date = 0;
-    // this.globalData.low.play = 0;
-    // this.globalData.low.win = 0;
-    // this.globalData.low.rate = 0;
-    // this.globalData.low.con_win = 0;
-    // this.globalData.low.con_loss = 0;
-    // this.globalData.low.curr = 0;
-
-    // this.globalData.mid.use_time = 0;
-    // this.globalData.mid.date = 0;
-    // this.globalData.mid.play = 0;
-    // this.globalData.mid.win = 0;
-    // this.globalData.mid.rate = 0;
-    // this.globalData.mid.con_win = 0;
-    // this.globalData.mid.con_loss = 0;
-    // this.globalData.mid.curr = 0;
-
-    // this.globalData.high.use_time = 0;
-    // this.globalData.high.date = 0;
-    // this.globalData.high.play = 0;
-    // this.globalData.high.win = 0;
-    // this.globalData.high.rate = 0;
-    // this.globalData.high.con_win = 0;
-    // this.globalData.high.con_loss = 0;
-    // this.globalData.high.curr = 0;
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())

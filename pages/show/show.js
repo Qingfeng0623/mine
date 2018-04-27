@@ -122,6 +122,25 @@ Page({
     app.globalData.board_style = this.board_choose;
     console.log(app.globalData.game_style);
     console.log(app.globalData.board_style);
+    try{
+      wx.setStorageSync('game_style', this.style_choose);
+      wx.setStorageSync('board_style', this.board_choose);
+      wx.showModal({
+        title: '提示',
+        content: 'You have changed the style successfully!',
+        showCancel:false,
+        success:function(res){
+          if(res.confirm)
+            wx.navigateBack({
+              delta: 1
+            })
+        }
+      })
+      
+    }catch(e){
+      console.log(e);
+    }
+    
   },
 
   back_page:function(e){

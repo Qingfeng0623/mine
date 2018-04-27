@@ -1,0 +1,20 @@
+<!--pages/help/help.wxml-->
+<view class='page'>
+  <view class='head'><text class='title'>扫雷：规则和基本要求</text></view>
+
+  <view class='center'>
+  <view><text class='title'>游戏目标</text></view>
+  <text>找出空方块，同时避免触雷。清除扫雷区的速度越快，得分就越高。</text>
+  </view>
+
+  <view class='tail'>
+    <view><text class='title'>玩法</text></view>  
+    <view><text>扫雷的规则非常简单：</text></view>
+    <view class='rule'>
+      <view><text>● 挖开地雷，游戏即告结束</text></view>
+      <view><text>● 挖开空方块，可以继续玩</text></view>
+      <view><text>● 挖开数字，则表示在其周围的八个方块中共有多少个雷，可以使用该信息推断能够安全单机附近的哪些方块</text></view>
+    </view>
+  </view>
+
+</view>

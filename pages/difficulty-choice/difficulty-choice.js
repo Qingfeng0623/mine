@@ -70,7 +70,7 @@ Page({
       
       // console.log(pages.length);
       wx.redirectTo({
-        url: '../gaming/gaming?rowCount=' + this.height + '&colCount=' + this.width + '&minesCount=' + this.mines + '&difficulty=' + this.difficulty,
+        url: '../gaming2/gaming2?rowCount=' + this.height + '&colCount=' + this.width + '&minesCount=' + this.mines + '&difficulty=' + this.difficulty,
       })
     }
     
