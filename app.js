@@ -48,6 +48,8 @@ App({
     try{
       this.globalData.game_style = wx.getStorageSync('game_style') || '扫雷';
       this.globalData.board_style = wx.getStorageSync('board_style') || '蓝色';
+      console.log(this.globalData.game_style)
+      console.log(this.globalData.board_style)
     }catch(e){
       console.log(e)
     }

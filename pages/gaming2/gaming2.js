@@ -19,8 +19,8 @@ Page({
     row_count:0,
     col_count:0,
     // background_color: 'rgb(121, 177, 236)',   //初始化为蓝色
-    board_style:'蓝色',
-    game_style:'../../images/mine_icon.png',
+    board_style:'',
+    game_style:'',
 
     zm_index: 40,      //正面z-index
     cq_index: 30,      //插旗z-index
@@ -46,6 +46,13 @@ Page({
   flags :0,      //插旗数量
   difficulty : '初级',    //当前选择的难度类型
   onLoad: function (options) {
+    wx.showShareMenu({
+      withShareTicket: true
+    })
+    console.log(options.scene)
+    if (options.scene == 1044) {
+      console.log(options.shareTicket)
+    }
     this.rowCount = Number(options.rowCount);
     this.colCount = Number(options.colCount);
     this.minesCount = this.minesLeft = this.temp_minesCount = Number(options.minesCount);
@@ -787,7 +794,10 @@ Page({
   onShow: function () {
     this.setData({
       bg_color: (app.globalData.board_style == '蓝色' ? 'rgb(121, 177, 236)' : 'rgb(91, 175, 98)'),
-      game_style: (app.globalData.board_style == '扫雷' ? '../../images/mine_icon.png' : '../../images/flower.png'),
+      game_style: (app.globalData.game_style == '扫雷' ? '../../images/mine_icon.png' : '../../images/flower.png'),
+    }),
+    wx.showShareMenu({
+      withShareTicket: true
     })
   },
 
@@ -822,7 +832,25 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-  
+  onShareAppMessage: function (res) {
+    
+    if(res.from == 'menu')
+    {
+      console.log(res)
+    }
+    return{
+      title:'PK',
+      path: '/pages/gaming2/gaming2?rowCount=' + this.rowCount + '&colCount=' + this.colCount + '&minesCount=' + this.temp_minesCount + '&difficulty=' + this.difficulty + '&time_consuming=' + this.data.time_consuming,
+      success:function(e){
+        console.log('OK'),
+          wx.showShareMenu({
+            withShareTicket: true
+          })
+      },
+      fail:function(e){
+        console.log('fail')
+      }
+    }
   }
+  
 })

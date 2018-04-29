@@ -208,7 +208,7 @@ image{
   position: absolute;
   background-color: #FFF; 
   border:#CCC 1px solid;
-  line-height: 50rpx;
+  line-height: 60rpx;
   text-align: center;
   font-weight: bold;
   font-size: 45rpx;
@@ -240,3 +240,27 @@ image{
 .num_8{
   color: rgb(0, 0, 0)
 }
+
+
+
+movable-area{
+  width:730rpx;
+  left: 10rpx;
+  right: 10rpx;
+  height:900rpx;
+  overflow: hidden; /* overflow 属性规定当内容溢出元素框时发生的事情 */
+  position: absolute;
+  top: 170rpx;
+  z-index: -1;
+  border-bottom: 1px dashed red;
+}
+
+movable-view {
+  align-items: center;
+  justify-content: center;
+  height: 1600rpx;
+  width: 1300rpx;
+  position: absolute;
+
+}
+

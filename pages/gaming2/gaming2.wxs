@@ -5,3 +5,18 @@ var board_class =  function(board_style){
 module.exports = {
   board_class:board_class
 }
+
+var left = function(col_count){
+  var temp = 160 - 20 * (col_count - 9);
+  return temp > 0 ? temp : 10;
+}
+
+var top = function(row_count){
+  var temp = 180 - 25 * (row_count - 9);
+  return temp > 0 ? temp : 10;
+}
+
+module.exports = {
+  padding_left:left,
+  padding_top:top,
+}

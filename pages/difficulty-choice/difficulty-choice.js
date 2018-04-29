@@ -115,8 +115,8 @@ Page({
         break;
       }
       case 'high':{
-        this.height = 30;
-        this.width = 16;
+        this.height = 16;
+        this.width = 30;
         this.mines = 99;
         this.difficulty = '高级';
         break;
@@ -308,10 +308,5 @@ Page({
   
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
   
-  }
 })
