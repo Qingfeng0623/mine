@@ -1,0 +1,76 @@
+<!--pages/gaming/gaming.wxml-->
+<wxs src="./gaming2.wxs" module="gaming" />
+
+<view class='page' >
+  <view class='toolbar'>  <!-- 菜单栏 -->
+    <view class='tool1'>
+      <button class='game' bindtap='show_game' style='color:{{game_color}}'>游戏</button>
+      <view class='tool_1'>
+        <button class='tool_game' style='display:{{game_show}}' bindtap='newGame'>新游戏</button>
+        <button class='tool_game' style='display:{{game_show}}' bindtap='record'>统计信息</button>
+        <button class='tool_game' style='display:{{game_show}}' bindtap='option'>选项</button>
+        <button class='tool_game' style='display:{{game_show}}' bindtap='alterShow'>更改外观</button>
+      </view>
+      
+    </view>
+    
+    <view class='tool2' >
+      <button class='help' bindtap='show_help' style='color:{{help_color}}'>帮助</button>
+      <button class='tool_help' style='display:{{help_show}}' bindtap='viewHelp'>查看帮助</button>
+      <button class='tool_help' style='display:{{help_show}}' bindtap='aboutMine'>关于扫雷</button>
+    </view>  
+  </view>
+
+  <view class='state'>                 <!-- 状态栏 -->
+    <view class='mines'>
+      <image src='../../images/mine_icon.png' class='mine_ima'></image>
+      <view class='mine_left'><text >{{mines_left}}</text></view>
+    </view>
+     <image src='{{expression_src}}' class='expression'></image> 
+    <!-- <button  class='expression'></button> -->
+    <view class='time'>
+      <image src='../../images/clock.png' class='time_ima'></image>
+      <view class='time_consuming'><text>{{time_consuming}}</text></view>
+    </view>
+  </view>   
+
+  <!-- 扫雷区 -->
+    <!-- <scroll-view scroll-x scroll-y style='height:800rpx' class='scroll' scroll-top='10' scroll-left='10'>   -->
+    <movable-area>    
+    <movable-view direction="all" scale scale-min="0.5" scale-max="4" style='padding-left: {{gaming.padding_left(col_count)}}rpx;padding-top: {{gaming.padding_top(row_count)}}rpx;'>  
+    <block class="block">
+    <view wx:for="{{mine_map}}" wx:for-item="row" wx:for-index="i" class="flex-container " >
+      <view wx:for="{{row}}" wx:for-item="col" wx:for-index="j" bindtap="demining" data-x="{{i}}" data-y="{{j}}" data-value="{{col}}" class="flex-item " >
+        <view class='zhengmian'  style="z-index:{{(col < 0 ? 40 : 4)}};background-color: {{bg_color}}"></view>
+        <view class='chaqi'  style="z-index:{{(col > 9 ? 50 : 30)}};opacity:{{(col > 9 ? 1 : 0)}}">
+          <image src='../../images/flag.png'></image>
+        </view>
+        <view class='lei' style="z-index:{{((col == 9 || col == 11) ? 50 : 10)}};opacity:{{((col == 9 || col == 11) ? 1 : 0)}}">
+          <image src='{{col == 9 ? game_style : game_style2}}'></image>
+        </view>
+        <view class='shuzi' style="z-index:{{(col < 9  ? (col >= 0 ? 50 : 20) : 20)}};opacity:{{(col < 9  ? (col >= 0 ? 1 : 0) : 0)}}">
+          <text class='num_{{col}}'>{{col == 0 ? '' : col}}</text>
+        </view>
+      </view>
+    </view>   
+    </block>
+    </movable-view>           
+    </movable-area>  
+   <!-- </scroll-view>   -->
+        <!-- <button wx:for="{{row}}" wx:for-item="col" wx:for-index="j" class="flex-item {{gaming.board_class(board_style)}} {{col < 9 ? (col < 0 ? '':'open') : (col > 9 ? 'flag' : 'mine')}}"  bindtap="demining" data-x="{{i}}" data-y="{{j}}" data-value="{{col}}"  style="color:{{(col < 5 ? (col < 3 ? (col < 2 ? (col < 1 ? ('black') : ('rgb(65, 85, 184)')) : ('rgb(32, 111, 6)')) : (col < 4 ? ('rgb(186, 1, 19)') : ('rgb(0, 3, 129)'))) : (col < 7 ? (col < 6 ? ('rgb(123, 4, 0)') : ('rgb(0, 129, 129)')) : (col < 8 ? ('rgb(166, 8, 7)') : ('rgb(190 190 190)'))))}}">
+            {{col < 9 ? (col < 0 ? '':(col < 1 ? '':col)) : (col > 9 ? 'F' : 'M')}} 
+        </button>    -->
+   
+
+  <view class="footer">
+        <view>
+            <switch bindchange="flagSwitch"/>
+        </view>
+  </view>
+
+  <view class="tips">
+    <text>- Switch 切换标志插旗</text>
+    <text>- 可移动方块区</text>
+    <text>- 支持双指放大缩小游戏区</text>
+  </view>
+</view>

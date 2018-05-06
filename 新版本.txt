@@ -1,0 +1,3 @@
+1、获取当前点击事件的x、y、value值，使用e.currentTarget.dataset，原为e.target.dataset
+2、要为每个内view加上position: absolute;
+3、

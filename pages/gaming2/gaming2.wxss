@@ -1,0 +1,268 @@
+/* pages/gaming/gaming.wxss */
+.toolbar{
+  display: flex;  
+}
+
+button{
+  
+  font-size: 15px;
+  line-height: 50rpx;
+}
+
+.tool1{
+  position: absolute;
+  left: 0rpx;
+  
+}
+
+.tool2{
+  position: absolute;
+  left: 230rpx;
+}
+
+.game{
+  width: 200rpx;
+  height: 50rpx;
+  margin-left: 0px;
+}
+
+.tool_1{
+  margin-top: 2rpx;
+  
+}
+
+.tool_game{
+  width: 300rpx;
+  text-align: left;
+  
+}
+
+.help{
+  width: 200rpx;
+  margin-left: 0px;
+}
+
+.tool_help{
+  width: 300rpx
+}
+
+.state{
+  display: flex;
+  position: absolute; 
+  top: 100rpx;
+  z-index: -1;  /* Z-index 仅能在定位元素上奏效 */
+}
+
+image{
+  width: 50rpx;
+  height: 50rpx;
+  
+}
+
+.mines{
+  display: flex;
+
+}
+
+.mine_ima{
+}
+
+.mine_left{
+  border: 1px solid black;
+  border-radius: 2px ;
+  width: 100rpx;
+  color: red;
+  text-align: right;
+}
+
+.expression{
+  margin-left: 180rpx;
+  margin-right: 180rpx;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 5px ;
+  border: 3px double #aaa;
+}
+
+.time{
+  display: flex;
+}
+
+.time_ima{
+}
+
+.time_consuming{
+  border: 1px solid black;
+  border-radius: 2px ;
+  margin-right: 0rpx;
+  width: 100rpx;
+  color: red;
+  text-align: right;
+}
+
+
+.scroll{
+  position: absolute;
+  top: 170rpx;
+  z-index: -1;
+  width: 100%;
+  white-space: nowrap; 
+  
+}
+
+.flex-container {
+    padding: 0;
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    line-height:1em;
+    width: 100%;  
+}
+
+.flex-item {
+    width: 50rpx;
+    height: 50rpx;
+    border: 1px solid black; 
+    border-radius: 0;
+    display: inline-block; 
+    margin-left: -1rpx;
+    margin-top: -1rpx;
+    
+}
+
+.board_blue{
+  background: rgb(121, 177, 236)
+}
+
+.board_green{
+  background: rgb(91, 175, 98)
+}
+
+.open { 
+  background: rgb(179, 186, 215);
+}
+
+.mine { 
+  background: #E9573F;  
+}
+
+.flag {
+    background: #F6BB42;
+}
+
+ .flex-item:before {
+    content: '';
+    display: block;
+    float: left;
+    padding-top:100%;
+} 
+
+.footer {
+  position: absolute;
+  margin-top: 1100rpx;
+  margin-left: 80%;
+}
+
+.tips {
+  position: fixed;
+  margin: 1100rpx auto auto 10%;
+  font-size: 62.5%;
+  color: #8d8d8d;
+  display: flex;
+  flex-direction: column;
+}
+
+.zhengmian{
+  width:49rpx;
+  height: 49rpx;
+  /* z-index: 40; */
+  position: absolute; 
+  border: 1px #CCCCCC outset;
+  margin: auto;
+  opacity: 1;
+
+}
+
+.chaqi{
+  width:49rpx;
+  height: 49rpx;
+  /* z-index: 30; */
+  position: absolute;
+  border: 1px #CCCCCC outset;
+  opacity: 1;
+
+}
+
+.lei{
+  width:50rpx;
+  height: 50rpx;
+  /* z-index: 10; */
+  position: absolute;
+  /* opacity: 0; */
+
+}
+
+.shuzi{
+  width:50rpx;
+  height: 50rpx;
+  /* z-index: 20; */
+  position: absolute;
+  background-color: #FFF; 
+  border:#CCC 1px solid;
+  line-height: 60rpx;
+  text-align: center;
+  font-weight: bold;
+  font-size: 45rpx;
+  /* opacity: 0; */
+
+}
+
+.num_1{
+  color: rgb(65, 85, 184)
+}
+.num_2{
+  color: rgb(32, 111, 6)
+}
+.num_3{
+  color: rgb(186, 1, 19)
+}
+.num_4{
+  color: rgb(0, 3, 129)
+}
+.num_5{
+  color: rgb(123, 4, 0)
+}
+.num_6{
+  color: rgb(0, 129, 129)
+}
+.num_7{
+  color: rgb(166, 8, 7)
+}
+.num_8{
+  color: rgb(0, 0, 0)
+}
+
+
+
+movable-area{
+  width:730rpx;
+  left: 10rpx;
+  right: 10rpx;
+  height:900rpx;
+  overflow: hidden; /* overflow 属性规定当内容溢出元素框时发生的事情 */
+  position: absolute;
+  top: 170rpx;
+  z-index: -1;
+  border-bottom: 1px dashed red;
+}
+
+movable-view {
+  align-items: center;
+  justify-content: center;
+  height: 1600rpx;
+  width: 1300rpx;
+  position: absolute;
+
+}
+

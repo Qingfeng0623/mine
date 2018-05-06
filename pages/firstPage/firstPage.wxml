@@ -1,0 +1,18 @@
+<view class='top' >
+  <text class='sweep'>扫</text><text class='mine'>雷</text>
+  <image src='../../images/play.png' class='play'  bindtap='start'></image>
+</view>
+
+<view class='bottom' >
+  
+  <view class='rank' bindtap='record'>
+    <image src='../../images/rank.png' class='rankIma'></image>
+    <button class='rankBut'>统计信息</button> 
+  </view>
+  
+  <view class='show' bindtap='show'>
+    <image src='../../images/color.png' class='showIma'></image>
+    <button class='showBut' bindtap='show'>外观</button> 
+  </view>
+    
+</view>

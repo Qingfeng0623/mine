@@ -1,0 +1,184 @@
+  /* pages/record/record.wxss  */
+/* .table{
+  width: 700rpx;
+  height: 70%;
+  left: 25rpx;
+  position: fixed;
+  top: 10%;
+}
+
+.first{       
+  display: flex; 
+  
+}
+
+.grade{
+  position: left;
+  margin: auto; 
+  letter-spacing: 15rpx;
+}
+
+.consuming{
+  margin: auto; 
+  letter-spacing: 15rpx;
+}
+
+.time{
+  position: right;
+  margin: auto; 
+  letter-spacing: 15rpx;
+}
+
+.low{    
+  display: flex; 
+  margin-top: 50rpx; 
+}
+
+.primary{
+  position: left;
+  margin-left: 75rpx;
+  padding: 20rpx 0;
+}
+
+.lowConsuming{
+  margin-left: 150rpx;
+  margin-right:auto; 
+  width: 85rpx;
+  padding: 20rpx 0;
+  text-align: center;
+}
+
+.lowTime{
+  position: right;
+  margin-right: 20rpx;
+}
+.lowTime_1{
+  display: block;
+}
+.lowTime_2{
+  display: block;
+  text-align: center;
+}
+
+.mid{     
+  display: flex;
+  padding: 20rpx 0;
+  margin-top: 100rpx;  
+}
+
+.medium{
+  position: left;
+  margin-left: 75rpx;
+  padding: 20rpx 0;
+}
+
+.midConsuming{
+  margin-left: 150rpx;
+  margin-right:auto; 
+  width: 85rpx;
+  text-align: center;
+  padding: 20rpx 0;
+}
+
+.midTime{
+  position: right;
+  margin-right: 20rpx;
+}
+.midTime_1{
+  display: block;
+}
+.midTime_2{
+  display: block;
+  text-align: center;
+}
+
+.high{     
+  display: flex;
+  padding: 20rpx 0;
+  margin-top: 100rpx;  
+}
+
+.senior{
+  position: left;
+  margin-left: 75rpx;
+  padding: 20rpx 0;
+}
+
+.highConsuming{
+  margin-left: 150rpx;
+  margin-right:auto; 
+  width: 85rpx;
+  text-align: center;
+  padding: 20rpx 0;
+}
+
+.highTime{
+  position: right;
+  margin-right: 20rpx;
+}
+.highTime_1{
+  display: block;
+}
+.highTime_2{
+  display: block;
+  text-align: center;
+}
+
+button{
+  position: fixed;
+  bottom: 100rpx;
+  right: 50rpx;
+}  */
+
+.page{
+  display: flex;
+  flex-direction: column;
+}
+
+.grade{
+
+}
+
+.picker{
+  margin-left: 10%;
+  width: 100rpx;
+  border: 1px solid black;
+  border-radius: 0.5em;
+  text-align: center;
+}
+
+.best{
+  margin-top: 15%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.record{
+  height: 150rpx;
+   border: 1px solid gainsboro; 
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+  margin-top: 5%;
+  width: 70%;
+}
+
+.date{
+  margin-top: 3%;
+}
+
+.detail{
+  margin-top: 15%;
+  margin-left: 5%;
+  width: 50%;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+}
+
+
+.buttons{
+  margin-top: 10%;
+  margin-left: 50%;
+}
